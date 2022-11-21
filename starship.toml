@@ -1,76 +1,133 @@
+# ~/.config/starship.toml
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Change command timeout from 500 to 1000 ms
+command_timeout = 1000
+
 format = """
-$username\
-$hostname\
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$directory\
-$vcsh\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$hg_branch\
-$docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$haskell\
-$helm\
-$java\
-$julia\
-$kotlin\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$raku\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$swift\
-$terraform\
-$vlang\
-$vagrant\
-$zig\
-$buf\
-$nix_shell\
-$conda\
-$meson\
-$spack\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$azure\
 $env_var\
-$crystal\
-$custom\
-$sudo\
-$cmd_duration\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\
+$fill\
+$ruby\
+$nodejs\
+$cmd_duration $jobs $time\
 $line_break\
-$jobs\
-$battery\
-$time\
-$status\
-$container\
-$shell\
 $character"""
+
+# Change the default prompt characters
+[character]
+error_symbol = "[❯](red)"
+success_symbol = "[❯](purple)"
+vicmd_symbol = "[❮](green)"
+
+[fill]
+symbol = " "
+
+# Shows an icon that should be included by zshrc script based on the distribution or os
+[env_var.STARSHIP_DISTRO]
+disabled = false
+format = '[$env_value](white) '
+variable = "STARSHIP_DISTRO"
+
+# Shows the username
+[username]
+disabled = false
+format = "[$user]($style) "
+show_always = true
+style_root = "white"
+style_user = "white"
+
+[hostname]
+disabled = true
+format = "on [$hostname](bold yellow) "
+ssh_only = false
+
+[directory]
+format = "at [$path]($style)[$read_only]($read_only_style) "
+home_symbol = " ~"
+read_only = "  "
+read_only_style = "197"
+truncation_length = 1
+truncation_symbol = "…/"
+
+[git_branch]
+format = "via [$symbol$branch]($style) "
+symbol = " "
+# truncation_length = 4
+style = "bold green"
+truncation_symbol = "…/"
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+conflicted = "🏳"
+deleted = " "
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+format = '[\($all_status$ahead_behind\)]($style) '
+modified = " "
+renamed = "襁 "
+staged = '[++\($count\)](green)'
+stashed = " "
+style = "bold green"
+untracked = " "
+up_to_date = " "
+
+[kubernetes]
+disabled = true
+format = 'via [ﴱ $context\($namespace\)](bold purple) '
+
+# (deactivated because of no space left)
+# 
+[terraform]
+disabled = true
+format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+
+[vagrant]
+disabled = true
+format = "via [ vagrant $version]($style) "
+
+[docker_context]
+disabled = true
+format = "via [ $context](bold blue) "
+
+[helm]
+disabled = true
+format = "via [ $version](bold purple) "
+
+[python]
+disabled = true
+python_binary = "python3"
+symbol = " "
+
+[nodejs]
+disabled = false
+format = "[ $version](bold green) "
+
+[ruby]
+detect_variables = []
+disabled = false
+format = "[ $version]($style) "
+
+[jobs]
+format = "[$symbol]($style)"
+number_threshold = 1
+style = "bold red"
+symbol = ""
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "bold white"

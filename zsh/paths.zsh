@@ -10,5 +10,3 @@ export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
 
 # Maven
 export PATH=$PATH:/opt/apache-maven/bin
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
