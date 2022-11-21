@@ -124,7 +124,7 @@ symbol = ""
 disabled = false
 
 [cmd_duration]
-format = "[$duration]($style)"
+format = "🕙 [$duration]($style)"
 style = "yellow"
 
 [time]
