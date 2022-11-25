@@ -14,6 +14,7 @@ $git_branch\
 $git_status\
 $git_metrics\
 $fill\
+$container\
 $ruby\
 $nodejs\
 $cmd_duration $jobs $time\
@@ -22,7 +23,7 @@ $character"""
 
 # Change the default prompt characters
 [character]
-error_symbol = "[❯](red)"
+error_symbol = "[🔥 ❯](red)"
 success_symbol = "[❯](purple)"
 vicmd_symbol = "[❮](green)"
 
@@ -50,8 +51,8 @@ ssh_only = false
 
 [directory]
 format = "at [$path]($style)[$read_only]($read_only_style) "
-home_symbol = " ~"
-read_only = "  "
+home_symbol = "🏠 ~"
+read_only = " 🔒 "
 read_only_style = "197"
 truncation_length = 1
 truncation_symbol = "…/"
@@ -131,3 +132,6 @@ style = "yellow"
 disabled = false
 format = "[$time]($style)"
 style = "bold white"
+
+[container]
+format = '[$symbol \[$name\]]($style) '
