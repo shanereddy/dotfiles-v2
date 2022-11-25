@@ -24,7 +24,7 @@ $character"""
 # Change the default prompt characters
 [character]
 error_symbol = "[🔥 ❯](red)"
-success_symbol = "[❯](purple)"
+success_symbol = "[🍺 ❯](purple)"
 vicmd_symbol = "[❮](green)"
 
 [fill]
