@@ -1,0 +1,17 @@
+# Taps
+tap 'homebrew/bundle'
+tap 'homebrew/core'
+tap 'homebrew/services'
+
+# CLI Essentials
+brew 'git'          # Version control
+
+brew 'jq'           # JSON parser, output and query files
+brew 'rbenv'
+brew 'starship'       # Cross-shell prompt
+brew 'zsh-autosuggestions'
+brew 'git-extras'
+brew 'nvm'          # Node Version Manager
+brew 'libyaml'
+brew 'vim'
+brew 'wget'
