@@ -20,3 +20,4 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Added by `rbenv init` on Tue  3 Mar 2026 21:33:31 GMT
 eval "$(rbenv init - --no-rehash zsh)"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"

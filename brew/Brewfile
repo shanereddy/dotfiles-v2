@@ -3,6 +3,10 @@ tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/services'
 
+# Fonts
+cask 'font-hack-nerd-font'
+cask 'claude-code'
+
 # CLI Essentials
 brew 'git'          # Version control
 
@@ -15,3 +19,5 @@ brew 'nvm'          # Node Version Manager
 brew 'libyaml'
 brew 'vim'
 brew 'wget'
+
+brew 'php'
