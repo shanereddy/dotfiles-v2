@@ -6,6 +6,7 @@ tap 'homebrew/services'
 # Fonts
 cask 'font-hack-nerd-font'
 cask 'claude-code'
+cask 'claude'
 
 # CLI Essentials
 brew 'git'          # Version control
