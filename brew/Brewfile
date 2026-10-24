@@ -5,8 +5,9 @@ tap 'homebrew/services'
 
 # Fonts
 cask 'font-hack-nerd-font'
-cask 'claude-code'
+cask 'claude-code@latest'
 cask 'claude'
+cask 'obsidian'
 
 # CLI Essentials
 brew 'git'          # Version control
@@ -20,5 +21,7 @@ brew 'nvm'          # Node Version Manager
 brew 'libyaml'
 brew 'vim'
 brew 'wget'
+brew 'gh'
+brew 'powershell'
 
 brew 'php'

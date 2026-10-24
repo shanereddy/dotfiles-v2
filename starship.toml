@@ -7,6 +7,7 @@ $directory\
 $git_branch\
 $git_status\
 [](fg:#394260 bg:#212736)\
+$python\
 $nodejs\
 $ruby\
 [](fg:#212736)\
@@ -43,6 +44,9 @@ format = '[[ $symbol ($version) ](green bg:#212736)]($style)'
 symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](red bg:#212736)]($style)'
+
+[python]
+format = '[[ $symbol ($version) (\($virtualenv\) )](green bg:#212736)]($style)'
 
 [time]
 disabled = false

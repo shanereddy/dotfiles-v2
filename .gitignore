@@ -7,3 +7,10 @@ wireshark
 cagent
 git
 NuGet
+gh
+second-brain
+stripe
+
+*.log
+*.lock
+herdr/*.json
