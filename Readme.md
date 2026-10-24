@@ -20,3 +20,10 @@ cd ~
 rm .zshrc
 ln -s ~/.config/zshrc .zshrc
 ```
+
+### Create symlink to your .gitconfig file
+
+```
+cd ~
+ln -s ~/.config/gitconfig .gitconfig
+```

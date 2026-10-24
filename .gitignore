@@ -11,6 +11,7 @@ gh
 second-brain
 stripe
 
+*.sock
 *.log
 *.lock
 herdr/*.json

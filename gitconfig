@@ -1,0 +1,84 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Shane Reddy
+	email = shane2807@gmail.com
+
+[merge]
+	tool = vscode
+
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+[diff]
+	tool = vscode
+
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[credential]
+	helper = !aws --profile shane-sso-1 codecommit credential-helper $@
+	UseHttpPath = true
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true                # stash/unstash uncommitted changes around a rebase
+	updateRefs = true		# keep stacked branches in sync when rebasing
+
+[push]
+	autoSetupRemote = true          # first push of a new branch just works, no --set-upstream
+	default = current
+
+[fetch]
+	prune = true                    # remove local refs to branches deleted on the remote
+	pruneTags = true
+
+[init]
+	defaultBranch = main
+
+[merge]
+	conflictStyle = zdiff3          # conflict markers also show the common ancestor
+
+[rerere]
+	enabled = true                  # remember how you resolved a conflict and reuse it
+
+[diff]
+	algorithm = histogram           # cleaner, more readable diffs
+	colorMoved = default            # moved lines shown in a different colour
+	renames = copies
+
+[commit]
+	verbose = true                  # shows the diff in the editor while writing the message
+
+[branch]
+	sort = -committerdate
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+
+[tag]
+	sort = version:refname          # v1.10 sorts after v1.9
+
+[help]
+	autocorrect = prompt            # `git stauts` offers to run `git status`
+
+[core]
+	editor = code --wait            # or nano, vim, notepad, etc.
+	autocrlf = input                # macOS/Linux; use `true` on Windows
+
+[alias]
+	st = status -sb
+	co = checkout
+	sw = switch
+	lg = log --graph --oneline --decorate --all
+	last = log -1 HEAD --stat
+	unstage = restore --staged
+	amend = commit --amend --no-edit
+	undo = reset --soft HEAD~1      # undo last commit, keep the changes staged
+	wip = !git add -A && git commit -m "WIP"
+	branches = branch -vv
